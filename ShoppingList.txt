@@ -2,6 +2,4 @@ Milk
 Break
 Bananas
  Eggs
-choclate
-popcorn
-candycorn
+
