@@ -4,3 +4,9 @@
 # updated on 9/28 by Ed
 
 print("Hello World")
+
+# Get user name
+user_name =input ("What is your name? ")
+
+# Say hello to user
+print("Hello " + user_name)
