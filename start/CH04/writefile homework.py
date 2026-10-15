@@ -13,14 +13,11 @@ script_dir = os.path.dirname( script_path )
 file_path = os.path.join(script_dir, "hackme.txt")
 
 #open file for writing
-f = open(file_path, "w")
+f = open(file_path, "r")
 
-#write to the file
-f.write("What is your name?\n")
-f.write("What is your favorite color?\n")
-f.write("What was your first pets's name?\n")
-f.write("What is mother's midden name?\n")
-f.write("What elementry school did you attend?\n")
-
-#close file
+#read contents
+contents = f.read()
+print("Here is someone to hack _ information")
+print(contents)
+#close
 f.close()
