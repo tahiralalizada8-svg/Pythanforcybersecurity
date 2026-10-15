@@ -16,7 +16,7 @@ file_path = os.path.join(script_dir, "testfile.txt")
 f = open(file_path, "w")
 
 #write to the file
-f.write("Hello World\n\n")
+f.write("Hello World\n")
 f.write("my name is Tahira\n")
 f.write("I like rubber ducks\n")
 
