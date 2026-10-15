@@ -1,0 +1,16 @@
+
+
+
+print("is this a good day? (y/n)")
+user_input = input()
+
+def send_message():
+    if user_input == "y":
+        print("That is great to hear!")
+ 
+    else:
+        print ("please answer with 'y' or 'n'.")
+
+    
+for i in range(10):
+        send_message()

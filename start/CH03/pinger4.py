@@ -2,7 +2,7 @@
 # Fourth example of pinging from Python
 # By 
 
-answer = input("is this a good day? ")
+answer = input("is this a good day? (y/n)")
 if answer == "y":
     for i in range(10):
         print("that is great to hear!")
