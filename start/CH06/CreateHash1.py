@@ -10,3 +10,4 @@ password = input("password: (password01)") or "password01"
 hashed_pass = sha512_crypt.using(rounds=5000).hash(password, salt=salt)
 
 print(hashed_pass)
+
