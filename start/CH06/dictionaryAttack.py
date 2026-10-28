@@ -6,7 +6,7 @@
 # imports
 from passlib.hash import sha512_crypt
 import os
-
+import sys
 # Load dictionary function
 def load_dictionary(file_name):
     #Get current directory
@@ -20,7 +20,7 @@ def load_dictionary(file_name):
     f = open(file_path, "r")
 
     #read contents
-    contents = f.read()
+    contents = f.readlines()
     return contents 
 
 # create hash function
@@ -32,12 +32,29 @@ def create_hash(password, salt):
     return hashed_pass
 
 # Get input from user
-# separate picee
-# Load dictionary
-# for each line/guess
-    # Hash guess
-    # compare hash to guess
-        #print guess
-        # quit
+sample_hash = "test:$6$KCZ30T.pBobQcvvd$QYHrZIUZE4dwZKITwxfFPAz4DRTQ4erDPMjSDLM8Wx/55U8aeW05tHuHHkG8lFPRhY.XRUIiOHg3OFE1yDohk0"
+shadow_line = input("Line from shadow file: ") or sample_hash
 
+# separate picee
+shadow_parts = shadow_line.split(":")
+user_name = shadow_parts[0]
+user_hash = shadow_parts[1]
+user_salt = user_hash.split("$")[2]
+
+# Load dictionary
+password_guesses = load_dictionary("top10000000.txt")
+# for each line/guess
+for password_guesses in password_guesses:
+    # Hash guess
+    hashed_guess = create_hash(
+                            password_guesses.strip(),
+                            user_salt
+                            ) 
+    # compare hash to guess
+    if user_hash == hashed_guess:
+        #print guess
+        print(user_name, password_guesses.strip())
+        # quit
+        sys.exit()
 # print not found
+print("Not found")
