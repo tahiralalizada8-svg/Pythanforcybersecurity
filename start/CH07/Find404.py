@@ -20,7 +20,9 @@ while True:
         break
     # search for 404
     if"404" in line:
-    # print line
-     print(line)
+        if "index.php" in line:
+            if "95.237.152.217" in line:
+                # print line
+                print(line)
 
 f.close()
